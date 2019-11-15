@@ -1,14 +1,23 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
-    <% end %>
-  </ul>
+<div class="container pt-3 d-flex">
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient, input_html: { class: 'select2' } %>
-    <%= f.input :description %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+  <div class="cocktail-img">
+    <%= cl_image_tag @cocktail.photo, height: 500, width: 500 %>
+  </div>
+  <div class="cocktail-info">
+    <div class="cocktail-name">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <div class="cocktail-doses">
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, input_html: { class: 'select2' } %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

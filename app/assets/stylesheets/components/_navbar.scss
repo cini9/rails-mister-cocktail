@@ -3,6 +3,8 @@
   background: white;
   height: $navbarHeight;
   width: 100vw;
+  position: fixed;
+  top: 0;
 
   .logo a {
     font-family: $logoFont;
@@ -15,8 +17,10 @@
     text-decoration: none;
 
   }
-}
 
-img {
+  img {
   height: 50px;
 }
+}
+
+

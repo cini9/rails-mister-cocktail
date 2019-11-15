@@ -6,5 +6,9 @@ class Cocktail < ApplicationRecord
   # Validations
   validates :name, uniqueness: true, presence: true
 
+  # Scopes
   scope :search_by, ->(query) { where('name iLIKE ?', "%#{query}%") }
+
+  # Uploaders
+  mount_uploader :photo, PhotoUploader
 end
