@@ -1,0 +1,23 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.banner {
+  width: 100vw;
+  height: calc(100vh - #{$navbarHeight});
+  background-image: url("https://source.unsplash.com/2FDstXKqaxI");
+  background-size: cover;
+  background-position: center;
+
+  .banner-titles {
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: white;
+    font-family: $logoFont;
+  }
+
+  h2 {
+    color: white;
+  }
+}

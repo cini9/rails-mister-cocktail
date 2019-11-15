@@ -1,0 +1,19 @@
+<div class="navbar">
+  <div class="logo d-flex align-items-center">
+    <%= link_to cocktails_path do %>
+      <%= image_tag "bartendr", alt: "Cocktail logo", class: "logo-img"%>
+      Bartendr
+    <% end %>
+  </div>
+  <div class="add-search d-flex">
+    <%= form_tag cocktails_path, method: 'get', class: 'navbar-form d-flex' do %>
+      <div class="input-group">
+        <%= text_field_tag :query, params[:query], size: 50, placeholder: "Search", class: "form-control mr-1"%>
+      </div>
+      <%= submit_tag 'Search', class: 'btn btn-success mr-1' %>
+    <% end %>
+    <div class="new-cocktail">
+      <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-outline-primary" %>
+    </div>
+  </div>
+</div>
