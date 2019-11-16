@@ -1,6 +1,8 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ---------------------------------- Index -------------------------------
 .banner {
   width: 100vw;
   height: calc(100vh - #{$navbarHeight});
@@ -9,13 +11,15 @@
   background-position: center;
 
   .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
-    padding-top: 200px;
-    position: relative
   }
 
   .banner-titles {
-    margin: 0 auto;
+    width: 100%
   }
 
   h1 {
@@ -28,10 +32,35 @@
   }
 
   .see-cocktails {
-    position: absolute;
-    bottom: 0;
     color: white;
     text-align: center;
-    width: 100%;
+    margin-bottom: 10px;
   }
 }
+
+// ---------------------------------- Show -------------------------------
+.cocktail-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#cocktail-card {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }

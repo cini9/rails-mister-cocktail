@@ -5,6 +5,8 @@
   width: 100vw;
   position: fixed;
   top: 0;
+  z-index: 9999;
+  box-shadow: 1px 1px 1px lightgrey;
 
   .logo a {
     font-family: $logoFont;
@@ -20,7 +22,5 @@
 
   img {
   height: 50px;
+  }
 }
-}
-
-

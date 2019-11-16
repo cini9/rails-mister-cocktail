@@ -1,5 +1,6 @@
-<div class="banner d-flex justify-content-center align-items-center">
+<div class="banner">
   <div class="container">
+    <div class="empty"></div>
     <div class="banner-titles">
       <h1>Bartendr</h1>
       <h2>Quick access to your favorite cocktails</h2>
@@ -11,7 +12,21 @@
   </div>
 </div>
 <div class="container">
-<% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-<% end %>
+  <h2 class="text-center my-5">Check out our cocktails !</h2>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <% if cocktail.photo.present? %>
+      <% url = cl_image_path cocktail.photo, height: 300, width: 300, crop: :fill %>
+    <% else %>
+      <% url = cl_image_path "generic_l79l58", height: 300, width: 300, crop: :fill %>
+    <% end %>
+      <div class="col-4">
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class="card-category my-2", id="cocktail-card", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url %>')">
+            <%= cocktail.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

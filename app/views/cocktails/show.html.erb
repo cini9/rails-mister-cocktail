@@ -1,18 +1,26 @@
 <div class="container pt-3 d-flex">
 
-  <div class="cocktail-img">
+  <div class="cocktail-img mr-3">
     <%= cl_image_tag @cocktail.photo, height: 500, width: 500 %>
   </div>
-  <div class="cocktail-info">
-    <div class="cocktail-name">
-      <h1><%= @cocktail.name %></h1>
-    </div>
-    <div class="cocktail-doses">
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
+  <div class="cocktail-info ml-3">
+    <div class="cocktail-info-text">
+      <div class="cocktail-name d-flex align-items-center">
+        <h1 class="mr-3"><%= @cocktail.name %></h1>
+        <%= link_to edit_cocktail_path(@cocktail) do %>
+          <i class="fas fa-pencil-alt fa-lg mr-3"></i>
         <% end %>
-      </ul>
+        <%= link_to cocktail_path(@cocktail), method: :delete do %>
+          <i class="fas fa-trash-alt fa-lg"></i>
+        <% end %>
+      </div>
+      <div class="cocktail-doses">
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.association :ingredient, input_html: { class: 'select2' } %>

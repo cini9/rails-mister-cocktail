@@ -17,4 +17,8 @@
 
 .main {
   margin-top: $navbarHeight;
+  display: flex;
+  min-height: calc(100vh - #{$navbarHeight} - #{$footerHeight});
+  flex-direction: column;
+  justify-content: space-between
 }
