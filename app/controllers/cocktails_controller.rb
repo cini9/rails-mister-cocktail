@@ -1,6 +1,11 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.search_by(params[:query]).sort_by{ |cocktail| cocktail.id }
+    @cocktails = Cocktail.search_by(params[:query]).sort_by { |cocktail| cocktail.id }
+    if params[:query].present?
+      @query = 1
+    else
+      @query = 0
+    end
   end
 
   def show

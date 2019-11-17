@@ -11,7 +11,7 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container" id="cocktails">
   <h2 class="text-center my-5">Check out our cocktails !</h2>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
@@ -29,4 +29,13 @@
       </div>
     <% end %>
   </div>
+  <% if @query == 1 %>
+    <script>
+      window.scrollBy({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    })
+    </script>
+  <% end %>
 </div>

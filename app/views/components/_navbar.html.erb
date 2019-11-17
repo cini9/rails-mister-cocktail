@@ -10,7 +10,7 @@
       <div class="input-group">
         <%= text_field_tag :query, params[:query], size: 50, placeholder: "Search", class: "form-control mr-1"%>
       </div>
-      <%= submit_tag 'Search', class: 'btn btn-success mr-1' %>
+      <%= submit_tag 'Search', class: 'btn btn-success mr-1', id: "search-btn" %>
     <% end %>
     <div class="new-cocktail">
       <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-outline-primary" %>
